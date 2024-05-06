@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title> Classe CE1 A </title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="./devoirs.css" />
+   
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Barre de navigation -->
+        <nav class="container-fluid navbar navbar-expand-md navbar-dark bg-dark">
+
+            <!-- Brand Logo -->
+
+            <a class="navbar-brand logo" href="index.html">
+                <span class="ce1a"> CE1 A </span>
+            </a>
+            <!-- My profil -->
+
+            <!-- Toggler/collapsibe Button -->
+            <div class="navbar-toggler btn-humburger " data-toggle="collapse" data-target="#collapsibleNavbar">
+                <!--<span class="navbar-toggler-icon icon"></span>-->
+                <span class="icon"></span>
+
+            </div>
+
+
+
+
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse menu" id="collapsibleNavbar">
+
+                <ul class="navbar-nav mr-auto text-center ">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"> Accueil </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href=""> Cours </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href=""> Devoirs </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=""> Travaux élèves</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ml-auto text-center">
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#contact"> Contact </a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+        <!-- Fin barre de navigation -->
+    </header>
+    <main>
+        <div class=" text-center">
+            <h1> Devoirs </h1>
+            <h5> Pour lundi 13 mai 2024 </h5>
+            <!-- Tableau -->
+
+            <table class="justify-content-center">
+                <thead>
+                    <tr>
+                        <th> Matière </th>
+                        <th> Devoir </th>
+                    </tr>
+                </thead> 
+                <tbody>
+                    <tr class="maths"> 
+                        <td> Maths </td>
+                        <td> Calcul posé </td>
+                    </tr>
+                    <tr class="francais">
+                        <td> Français </td>
+                        <td> Apprendre le verbe "être" au présent </td>
+                    </tr>
+                    <tr class="poesie">
+                        <td> Poésie </td>
+                        <td> Finir la poésie </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Entrainement-->
+        <div class=" text-center ">
+            <button id="clique" type="button" class="btn btn-secondary">Clique ici pour t'entrainer </button>
+        </div>
+        <p id="message" class="text-center"></p>
+        <div id="entrainement" class="text-center">
+
+        </div>
+        <!---->
+    </main>
+
+    <script src="devoirs.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

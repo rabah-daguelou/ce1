@@ -1,0 +1,120 @@
+/* Général */
+*{
+  margin:o;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+html, body {
+  overflow-x: hidden;
+  font-family: 'Courier New', Courier, monospace;
+}
+a, a:hover {
+  text-decoration: none;
+}
+
+/* header */
+
+/* header */
+
+ul li {
+  color: rgb(207, 51, 51);
+  margin-left: 20px;
+}
+
+ul li :hover {
+  cursor: pointer;
+  color: rgb(255, 255, 255) !important;
+  text-shadow: 1px 1px 1px #000;
+  font-weight: bold;
+}
+.ce1a {
+  font-size: 30px;
+  font-weight: bolder;
+    background: linear-gradient(to right, blue, green, yellow);
+   
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* button humburger */
+.btn-humburger {
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  position: relative;
+  padding: 0;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: bordure 2s infinite
+}
+
+@keyframes bordure {
+  0% {
+    border-top-color: #fff;
+
+  }
+
+  25% {
+    border-right-color: #fff;
+
+  }
+
+  50% {
+    border-bottom-color: #fff;
+
+  }
+
+  100% {
+    border-left-color: #fff;
+
+  }
+}
+.btn-humburger .icon {
+  display: block;
+  width: 90%;
+  height: 4px;
+  background-color: #fff;
+  transition: background-color 0s ease-in-out;
+}
+.btn-humburger .icon::before {
+  content: '';
+  display: block;
+  width: 90%;
+  height: 4px;
+  background-color: #fff;
+  position: absolute;
+  transform: translateY(10px);
+}
+.btn-humburger .icon::after {
+  content: "Menu";
+  font-size: 13px;
+  position: absolute;
+  transform: translateY(-15px);
+}
+
+.menuBackground {
+  background: rgb(149, 136, 136);
+  border-radius: 5px;
+  margin-top: 10px
+}
+
+.active .icon {
+  background-color: transparent;
+}
+
+.active .icon::before {
+  transform: translateY(0px) rotateZ(-40deg);
+  background-color: red;
+}
+.active .icon::after {
+  content: "";
+  display: block;
+  width: 90%;
+  height: 4px;
+  transform: translateY(0px) rotateZ(40deg);
+  background-color: red;
+}
+
