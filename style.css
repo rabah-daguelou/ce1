@@ -17,6 +17,15 @@ a:hover {
   text-decoration: none;
 }
 
+.bienvenue {
+  padding: 20px;
+  text-align: justify;
+}
+.bienvenue h1 {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
 /* header */
 
 /* header */
@@ -147,4 +156,10 @@ font-weight:900;
 .s_entrainer li:hover a{
   background-color: rgb(18, 18, 18);
   color: #000;
+}
+
+footer {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
 }
