@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.bouton {
+    margin: 10px;
+}
+.bouton li {
+    margin: 5px;
+    background-color: rgb(137, 135, 135);
+    border-radius: 5%;
+}
+.bouton li:hover button{
+    background-color: rgb(20, 19, 19);
+    border-radius: 5%;
+}
+#tableau {
+    min-width: 300px;
+    max-width: 900px;
+    min-height: 500px;
+    background-color: black;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.titreAndScore {
+    color: #fff;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.operation {
+    font-size: 50px;
+    color: #fff;
+}
+
+input {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+.bouton_valider,
+.bouton_suivant {
+    margin-left: 10px;
+    margin-top: -9px;
+}
+
+.noteFinale {
+    color: #fff;
+    font-size: 20px;
+
+}
+
+.commentaire,
+.consigne {
+    color: aqua;
+    font-size: 20px;
+}
+
+.emoji {
+    font-size: 50px;
+}

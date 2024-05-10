@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title> Classe CE1 A </title>
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="maths.css">
+
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Barre de navigation -->
+        <nav class="container-fluid navbar navbar-expand-md navbar-dark bg-dark">
+
+            <!-- Brand Logo -->
+
+            <a class="navbar-brand logo" href="../../index.html">
+                <span class="ce1a"> CE1 A </span>
+            </a>
+            <!-- My profil -->
+
+            <!-- Toggler/collapsibe Button -->
+            <div class="navbar-toggler btn-humburger " data-toggle="collapse" data-target="#collapsibleNavbar">
+                <!--<span class="navbar-toggler-icon icon"></span>-->
+                <span class="icon"></span>
+
+            </div>
+
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse menu" id="collapsibleNavbar">
+
+                <ul class="navbar-nav mr-auto text-center ">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../../index.html"> Accueil </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href=""> Cours </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../devoirs/devoirs.html"> Devoirs </a>
+                    </li>
+
+                    <!-- Drop down button -->
+                    <li class="nav-item">
+                        <div class="dropdown ">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                S'entrainer
+                            </button>
+                            <ul class="dropdown-menu s_entrainer" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#"> Maths </a></li>
+                                <li><a class="dropdown-item" href="../francais/francais.html"> Français </a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="../autres/autres.html"> Autres </a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- -->
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> Travaux élèves</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+        <!-- Fin barre de navigation -->
+    </header>
+
+    <main>
+       <h1 class="text-center"> S'entrainer en mathématiques </h1>
+    <nav class="container-fluid navbar navbar-expand-md navbar-secondary bg-secondary">
+       <div class="boutons d-inline-flex justify-content-evenly flex-wrap">
+
+            <div class=" dropdown calculMental">
+                <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Calcul mental
+                </button>
+                <ul class="dropdown-menu bouton" aria-labelledby="dropdownMenuButton1">
+                    <li class="liBouton">
+                        <button type="button" class=" dropdown-item " id="calcul_mental_function"
+                            onclick="clique_calcul_mental_function(1,0,0)"> CP / CE 1 </button>
+                    </li>
+                    <li class="liBouton">
+                        <button type="button" class=" dropdown-item" id="calcul_mental_function"
+                            onclick="clique_calcul_mental_function(2,0,0)"> CE 2 / CM 1 </button>
+                    </li>
+                    <li class="liBouton">
+                        <button type="button" class=" dropdown-item" id="calcul_mental_function"
+                            onclick="clique_calcul_mental_function(3,0,0)"> CM 2 / 6e </button>
+                    </li>
+            
+                </ul>
+            </div>
+            <div class="bouton dropdown additionPosee">
+                <button class="btn btn-primary dropdown-toggle disabled" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Addition posée
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li>
+                        <button type="button" class="btn btn-primary dropdown-item" id="calcul_mental_function"
+                            onclick="clique_addition_posee_function(1,0,0)"> Niveau 1 </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-primary dropdown-item" id="calcul_mental_function"
+                            onclick="clique_addition_posee_function(2,0,0)"> Niveau 2 </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-primary dropdown-item" id="calcul_mental_function"
+                            onclick="clique_addition_posee_function(3,0,0)"> Niveau 3 </button>
+                    </li>
+            
+                </ul>
+            </div>
+            <div class="bouton dropdown soustractionPosee">
+                <button class="btn btn-success dropdown-toggle disabled" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Soustraction posée
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li>
+                        <button type="button" class="btn btn-primary dropdown-item" id="calcul_mental_function"
+                            onclick="clique_soustraction_posee_function(1,0,0)"> Niveau 1 </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-primary dropdown-item" id="calcul_mental_function"
+                            onclick="clique_soustraction_posee_function(2,0,0)"> Niveau 2 </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-primary dropdown-item" id="calcul_mental_function"
+                            onclick="clique_soustraction_posee_function(3,0,0)"> Niveau 3 </button>
+                    </li>
+            
+                </ul>
+            </div>
+
+            <div class="bouton dropdown multiplicationPosee">
+                <button class="btn btn-danger dropdown-toggle disabled" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Multiplication posée
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li>
+                        <button type="button" class="btn btn-primary dropdown-item" id="calcul_mental_function"
+                            onclick="clique_multiplication_posee_function(1,0,0)"> Niveau 1 </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-primary dropdown-item" id="calcul_mental_function"
+                            onclick="clique_multiplicationposee_function(2,0,0)"> Niveau 2 </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-primary dropdown-item" id="calcul_mental_function"
+                            onclick="clique_multiplication_posee_function(3,0,0)"> Niveau 3 </button>
+                    </li>
+            
+                </ul>
+            </div>
+
+            <div class="bouton dropdown tablesMultiplication">
+                <button class="btn btn-warning dropdown-toggle disabled" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Tables de multiplication
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li>
+                        <button type="button" class="btn btn-primary dropdown-item" id="calcul_mental_function"
+                            onclick="clique_tables_de_multiplication_function(1,0,0)"> Niveau 1 </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-primary dropdown-item" id="calcul_mental_function"
+                            onclick="clique_tables_de_multiplication_function(2,0,0)"> Niveau 2 </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-primary dropdown-item" id="calcul_mental_function"
+                            onclick="clique_tables_de_multiplication_function(3,0,0)"> Niveau 3 </button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+</nav>
+        <!-- Mon tableau -->
+        <div id="tableau">
+
+        </div>
+    </main>
+    <!-- Essai -->
+
+
+
+    <!-- -->
+    <script src="../../index.js"></script>
+    <script src="maths.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

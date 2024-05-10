@@ -1,15 +1,19 @@
 /* Général */
-*{
-  margin:o;
+* {
+  margin: o;
   padding: 0;
   box-sizing: border-box;
-  
+
 }
-html, body {
-  overflow-x: hidden;
+
+html,
+body {
+
   font-family: 'Courier New', Courier, monospace;
 }
-a, a:hover {
+
+a,
+a:hover {
   text-decoration: none;
 }
 
@@ -17,26 +21,27 @@ a, a:hover {
 
 /* header */
 
-ul li {
-  color: rgb(207, 51, 51);
+ul li { 
   margin-left: 20px;
 }
 
 ul li :hover {
   cursor: pointer;
-  color: rgb(255, 255, 255) !important;
+  color: rgb(236, 233, 233) !important;
   text-shadow: 1px 1px 1px #000;
   font-weight: bold;
 }
-.ce1a {
+
+.ce1a, h1 {
   font-size: 30px;
   font-weight: bolder;
-    background: linear-gradient(to right, blue, green, yellow);
-   
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: linear-gradient(to right, blue, green, yellow);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
 /* button humburger */
 .btn-humburger {
   width: 40px;
@@ -48,7 +53,9 @@ ul li :hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: bordure 2s infinite
+  animation: bordure 2s infinite;
+  cursor: pointer;
+  
 }
 
 @keyframes bordure {
@@ -72,6 +79,7 @@ ul li :hover {
 
   }
 }
+
 .btn-humburger .icon {
   display: block;
   width: 90%;
@@ -79,6 +87,7 @@ ul li :hover {
   background-color: #fff;
   transition: background-color 0s ease-in-out;
 }
+
 .btn-humburger .icon::before {
   content: '';
   display: block;
@@ -88,6 +97,7 @@ ul li :hover {
   position: absolute;
   transform: translateY(10px);
 }
+
 .btn-humburger .icon::after {
   content: "Menu";
   font-size: 13px;
@@ -109,6 +119,7 @@ ul li :hover {
   transform: translateY(0px) rotateZ(-40deg);
   background-color: red;
 }
+
 .active .icon::after {
   content: "";
   display: block;
@@ -118,3 +129,22 @@ ul li :hover {
   background-color: red;
 }
 
+/* Bouton s'entrainer */
+.s_entrainer{
+  max-width: 200px;
+  margin: 17px auto 0px !important;
+  background: #b5b4b4;
+}
+.s_entrainer li{
+  
+  margin: 0;
+}
+.s_entrainer li a{
+color: #fff;
+text-shadow: 1px 1px #000;
+font-weight:900;
+}
+.s_entrainer li:hover a{
+  background-color: rgb(18, 18, 18);
+  color: #000;
+}
