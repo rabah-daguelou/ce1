@@ -17,6 +17,34 @@ a:hover {
   text-decoration: none;
 }
 
+/* */
+nav {
+  min-height: 80px;
+}
+
+.logo {
+  position: relative;
+  width: 100px;
+}
+.logo img {
+  position: absolute;
+  top: -39px;
+  left: 0px;
+  z-index: 1;
+  border-radius: 50%;
+}
+.logo .ce1a {
+  width: 100px;
+  position: absolute;
+    border: .3px solid;
+    top: -18px;
+    z-index: 2;
+    background-color: #474747;
+    text-align:center;
+    border-radius: 50%;
+    opacity: .8;
+}
+
 .bienvenue {
   padding: 20px;
   text-align: justify;
@@ -42,7 +70,7 @@ ul li :hover {
   font-weight: bold;
 }
 
-.ce1a, h1 {
+h1 {
   font-size: 30px;
   font-weight: bolder;
   background: linear-gradient(to right, blue, green, yellow);
@@ -51,7 +79,9 @@ ul li :hover {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
+.ce1a{
+  background-color: #de1010;
+}
 /* button humburger */
 .btn-humburger {
   width: 40px;
@@ -118,7 +148,7 @@ ul li :hover {
 .menuBackground {
   background: rgb(149, 136, 136);
   border-radius: 5px;
-  margin-top: 10px
+  margin-top: 20px
 }
 
 .active .icon {

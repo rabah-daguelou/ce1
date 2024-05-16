@@ -96,7 +96,7 @@ let poesieTableau = [
       strophe4: "Jannat4.mp3",
     },
   },
-     /*{
+  {
     prenom: "Mayssa",
     pdf: "mayssa.pdf",
     png: "mayssa.png",
@@ -107,7 +107,7 @@ let poesieTableau = [
       strophe3: "Mayssa3.mp3",
       strophe4: "Mayssa4.mp3",
     },
-  },*/
+  },
   {
     prenom: "Nour-Aicha",
     pdf: "nour-aicha.pdf",
