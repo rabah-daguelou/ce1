@@ -100,7 +100,7 @@ let poesieTableau = [
     prenom: "Mayssa",
     pdf: "mayssa.pdf",
     png: "mayssa.png",
- audio: "mayssa.mp3",
+    audio: "mayssa.mp3",
     strophes: {
       strophe1: "Mayssa1.mp3",
       strophe2: "Mayssa2.mp3",
@@ -206,7 +206,61 @@ let poesieTableau = [
       strophe4: "Adam4.mp3",
     },
   },
+  {
+    prenom: "Assia",
+    pdf: "assia.pdf",
+    png: "assia.png",
+    audio: "assia.mp3",
+    strophes: {
+      strophe1: "Assia1.mp3",
+      strophe2: "Assia2.mp3",
+      strophe3: "Assia3.mp3",
+      strophe4: "Assia4.mp3",
+    },
+  },
+  {
+    prenom: "Zayneb",
+    pdf: "zayneb.pdf",
+    png: "zayneb.png",
+    audio: "zayneb.mp3",
+    strophes: {
+      strophe1: "Zayneb1.mp3",
+      strophe2: "Zayneb2.mp3",
+      strophe3: "Zayneb3.mp3",
+      strophe4: "Zayneb4.mp3",
+    },
+  },
+  {
+    prenom: "Ilan",
+    pdf: "ilan.pdf",
+    png: "ilan.png",
+    audio: "ilan.mp3",
+    strophes: {
+      strophe1: "Ilan1.mp3",
+      strophe2: "Ilan2.mp3",
+      strophe3: "Ilan3.mp3",
+      strophe4: "Ilan4.mp3",
+    },
+  },
+  /*{
+    prenom: "Ziyad",
+    pdf: "ziyad.pdf",
+    png: "ziyad.png",
+    audio: "ziyad.mp3",
+    strophes: {
+      strophe1: "Ziyad1.mp3",
+      strophe2: "Ziyad2.mp3",
+      strophe3: "Ziyad3.mp3",
+      strophe4: "Ziyad4.mp3",
+    },
+  },*/
 ];
+
+ // Fonction Générer un nombre aléatoire dans un interval
+
+  function aleatoire(min, max) {
+    return Math.trunc(min + Math.random() * (max - min));
+  }
 // Fonction Poésie
 function poesieFunction() {
   // Texte d'introduction poésie Paul Eluard
@@ -273,51 +327,46 @@ function poesieFunction() {
   btnPoemeAleatoire.className = "btn btn-success";
   tableau.appendChild(btnPoemeAleatoire);
   btnPoemeAleatoire.textContent = "Composer mon poème";
-  let poemeGenere = document.createElement("audio");
-
-  // Ecouter le bouton
+  
   let poemeChoisi = [];
   let obj = {};
+
+  // Fonction de lecture du poème choisie Howler JS
+  function autoplay(i, poemeChoisi) {
+    var sound = new Howl({
+      src: [`poesie/audios/${poemeChoisi[i]}`],
+      preload: true,
+      onend: function () {
+        if (i+1<poemeChoisi.length) {
+          autoplay(i + 1, poemeChoisi);
+        } else {
+          btnPoemeAleatoire.disabled = false
+          btnPoemeAleatoire.textContent="Générer mon poème"
+        }
+      },
+    });
+    btnPoemeAleatoire.textContent = poemeChoisi[i].split(".")[0];
+    sound.play();
+  }
+
+  // Ecouter le bouton composer mon poème
   btnPoemeAleatoire.addEventListener("click", () => {
-    let divPoemeClasse = document.createElement("div");
-    tableau.appendChild(divPoemeClasse);
+    poemeChoisi=[]
+    btnPoemeAleatoire.disabled = true;
+    //let divPoemeClasse = document.createElement("div");
+   // tableau.appendChild(divPoemeClasse);
     for (let i = 0; i < poesieTableau.length; i++) {
       let numeroEleve = aleatoire(0, poesieTableau.length);
       let numeroStrophe = aleatoire(1, 4);
       obj = poesieTableau[numeroEleve].strophes;
       let stropheChoisie = Object.values(obj)[numeroStrophe];
-
       poemeChoisi.push(stropheChoisie);
     }
-    console.log("Poème choisi: ", poemeChoisi);
 
-    // howler js
-    let i = 0;
-    function autoplay(i, poemeChoisi) {
-      var sound = new Howl({
-        src: [`poesie/audios/${poemeChoisi[i]}`],
-        
-        preload: true,
-        onend: function () {
-          if (i + 1 == poemeChoisi.length) {
-            autoplay(0, poemeChoisi);
-          } else {
-            autoplay(i + 1, poemeChoisi);
-          }
-        },
-      });
-      
-      btnPoemeAleatoire.textContent = poemeChoisi[i].split('.')[0]
-      sound.play();
-    }
-
-    autoplay(0, poemeChoisi);
+    // howler js  
+autoplay(0, poemeChoisi);
+  
   });
-
-  /**/
-
-  function aleatoire(min, max) {
-    return Math.trunc(min + Math.random() * (max - min));
-  }
+  
 }
 

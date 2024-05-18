@@ -11,7 +11,15 @@ let messageReponse = document.createElement("p");
 messageReponse.className = "messageReponse";
 
 // Consignes
+let consigne = document.createElement("p");
+consigne.className = "consigne";
 let consigneCalculMental = `<h2> Consigne </h2> <p> Tu dois répondre à 10 questions. Chaque bonne réponse te rapportera 1 point. Tu peux voir ta note qui s'affichera en haut à droite du tableau. </p>`;
+
+// Bouton commencer
+let bouton_commencer = document.createElement("button");
+bouton_commencer.textContent = "Commencer";
+bouton_commencer.className = "btn btn-danger bouton_commencer";
+// Fonction niveau
 function niveauFunction(niveau) {
   switch (niveau) {
     case 1:
@@ -30,6 +38,8 @@ function niveauFunction(niveau) {
       break;
   }
 }
+
+// Fonction opération
 function operationFunction(numero_operation, niveau) {
   switch (numero_operation) {
     // Addition
@@ -73,23 +83,32 @@ function operationFunction(numero_operation, niveau) {
 }
 
 // Clique sur Calcul mental
-function clique_calcul_mental_function(niveau, note, question) {
+function clique(choix, niveau, note, question) {
+  console.log('Choix:', choix);
+  console.log('Niveau:', niveau);
   tableau.innerHTML = "";
-  console.log(`calcul mental, niveau ${niveau}`);
-  let consigne = document.createElement("p");
-  tableau.appendChild(consigne);
-  consigne.innerHTML = consigneCalculMental;
-  consigne.className = "consigne";
+  switch (choix) {
+    case 'calcul_mental':
+      tableau.appendChild(consigne);
+      consigne.innerHTML = consigneCalculMental;
+      tableau.appendChild(bouton_commencer);
+      bouton_commencer.addEventListener("click", () => {
+      calcul_mental_function(niveau, note, question);
+      });
+      break;
+  
+    default:
+      break;
+  }
+  
+  
+  
+  
+  
 
   // Bouton Commencer
-  let bouton_commencer = document.createElement("button");
-  bouton_commencer.textContent = "Commencer";
-  bouton_commencer.className = "btn btn-danger bouton_commencer";
-  tableau.appendChild(bouton_commencer);
-  bouton_commencer.addEventListener("click", () => {
-    console.log("yes");
-    calcul_mental_function(niveau, note, question);
-  });
+  
+  
 }
 
 // Fonction Calcul mental
@@ -203,3 +222,7 @@ function calcul_mental_function(niveau, note, question) {
     });
   });
 }
+
+// Clique sur Addition posée
+
+// Fonction Addition posée
