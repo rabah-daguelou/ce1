@@ -22,8 +22,13 @@
     background-color: black;
     text-align: center;
     margin: 20px auto;
+    color: #fff;
+    font-size: 5vw;
 }
 
+.titre {
+    text-align: left;
+}
 .titreAndScore {
     color: #fff;
     padding-top: 20px;
@@ -63,3 +68,27 @@ input {
 .emoji {
     font-size: 50px;
 }
+
+/* Tables multiplication */
+.titre {
+    color: aqua;
+    font-size: 5vw;
+}
+#tableau  h4{
+    color: rgb(11, 119, 251);
+}
+.titreAndScore h4 {
+    color: rgb(56, 249, 8) !important;
+}
+.divBoutonsTables {
+    display: flex;
+    justify-content: space-evenly;
+}
+.formulaire {
+    display: grid;
+}
+
+label {
+    margin: 10px;
+}
+
