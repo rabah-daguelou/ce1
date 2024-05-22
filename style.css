@@ -13,9 +13,10 @@ body {
 }
 #charcot {
   color: #fff;
-  margin-bottom: 0px !important;
+  padding-bottom: 10px !important;
+  margin-bottom: 0px;
   text-align: center;
-  font-size: 3vw;
+  font-size: 2vw;
   padding: 5px;
 }
 a,
