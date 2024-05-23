@@ -16,3 +16,12 @@ ul li {
     color: #fff;
     text-align: center;
 }
+
+.divTitre {
+    display: flex;
+    justify-content: space-between;
+    color: aqua;
+}
+.divTitre span {
+    color: rgb(0, 255, 149);
+}

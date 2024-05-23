@@ -242,6 +242,30 @@ let poesieTableau = [
       strophe4: "Ilan4.mp3",
     },
   },
+  {
+    prenom: "Inaya",
+    pdf: "inaya.pdf",
+    png: "inaya.png",
+    audio: "inaya.mp3",
+    strophes: {
+      strophe1: "Inaya1.mp3",
+      strophe2: "Inaya2.mp3",
+      strophe3: "Inaya3.mp3",
+      strophe4: "Inaya4.mp3",
+    },
+  },
+  {
+    prenom: "Ouways",
+    pdf: "ouways.pdf",
+    png: "ouways.png",
+    audio: "ouways.mp3",
+    strophes: {
+      strophe1: "Ouways1.mp3",
+      strophe2: "Ouways2.mp3",
+      strophe3: "Ouways3.mp3",
+      strophe4: "Ouways4.mp3",
+    },
+  },
   /*{
     prenom: "Ziyad",
     pdf: "ziyad.pdf",

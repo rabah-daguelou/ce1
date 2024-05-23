@@ -195,3 +195,30 @@ font-weight:900;
   background-color: rgb(18, 18, 18);
   color: #000;
 }
+
+/* CSS pour entrainements */
+.bouton {
+  margin: 10px;
+}
+
+.bouton li {
+  margin: 5px;
+  background-color: rgb(137, 135, 135);
+  border-radius: 5%;
+}
+
+.bouton li:hover button {
+  background-color: rgb(20, 19, 19);
+  border-radius: 5%;
+}
+
+#tableau {
+  min-width: 300px;
+  max-width: 900px;
+  min-height: 500px;
+  background-color: black;
+  text-align: center;
+  margin: 20px auto;
+  color: #fff;
+  padding: 10px;
+}
