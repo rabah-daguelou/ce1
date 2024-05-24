@@ -180,12 +180,12 @@ let poesieTableau = [
       strophe4: "Aeron4.mp3",
     },
   },
-  /*
+
   {
     prenom: "Anaîs-A",
-    pdf: "anais_a.pdf",
-    png: "anais_a.png",
-    audio: "anais_a.mp3",
+    pdf: "anais-a.pdf",
+    png: "anais-a.png",
+    audio: "anais-a.mp3",
     strophes: {
       strophe1: "Anais-a1.mp3",
       strophe2: "Anais-a2.mp3",
@@ -193,7 +193,6 @@ let poesieTableau = [
       strophe4: "Anais-a4.mp3",
     },
   },
-  */
   {
     prenom: "Adam",
     pdf: "adam.pdf",
@@ -266,7 +265,7 @@ let poesieTableau = [
       strophe4: "Ouways4.mp3",
     },
   },
-  /*{
+  {
     prenom: "Ziyad",
     pdf: "ziyad.pdf",
     png: "ziyad.png",
@@ -277,7 +276,19 @@ let poesieTableau = [
       strophe3: "Ziyad3.mp3",
       strophe4: "Ziyad4.mp3",
     },
-  },*/
+  },
+  {
+    prenom: "Rayan",
+    pdf: "rayan.pdf",
+    png: "rayan.png",
+    audio: "rayan.mp3",
+    strophes: {
+      strophe1: "Rayan1.mp3",
+      strophe2: "Rayan2.mp3",
+      strophe3: "Rayan3.mp3",
+      strophe4: "Rayan4.mp3",
+    },
+  },
 ];
 
  // Fonction Générer un nombre aléatoire dans un interval
