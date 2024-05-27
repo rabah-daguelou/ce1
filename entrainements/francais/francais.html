@@ -102,43 +102,87 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li>
-                                <button type="button" class="btn btn-primary dropdown-item" onclick="clique('vocabulaire','CP / CE1',0,0)"> CP/CE1
+                                <button type="button" class="btn btn-primary dropdown-item" onclick="clique('vocabulaire','CP/CE1',0,0)"> CP/CE1
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="btn btn-primary dropdown-item" onclick="clique('vocabulaire','CE2 / CM1',0,0)"> CE2/CM1
+                                <button type="button" class="btn btn-primary dropdown-item" onclick="clique('vocabulaire','CE2/CM1',0,0)"> CE2/CM1
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="btn btn-primary dropdown-item" onclick="clique('vocabulaire','CM2 / 6ème',0,0)"> CM2/                                    6ème </button>
+                                <button type="button" class="btn btn-primary dropdown-item" onclick="clique('vocabulaire','CM2/6ème',0,0)"> CM2/6ème                                    6ème </button>
                             </li>
                     
                         </ul>
                     </div>
                     
                 <div class="bouton dropdown conjugaison">
-                    <button class="btn btn-success dropdown-toggle disabled" type="button" id="dropdownMenuButton1"
+                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Grammaire
                     </button>
-                
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li>
+                            <button type="button" class="btn btn-primary dropdown-item" onclick="clique('grammaire','CP/CE1',0,0)">
+                                CP/CE1
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-primary dropdown-item" onclick="clique('grammaire','CE2/CM1',1,0)">
+                                CE2/CM1
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-primary dropdown-item" onclick="clique('grammaire','CM2 / 6ème',3,0)">
+                                CM2/6ème </button>
+                        </li>
+                    
+                    </ul>
                 </div>
                     <div class="bouton dropdown conjugaison">
-                        <button class="btn btn-success dropdown-toggle disabled" type="button" id="dropdownMenuButton1"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             Conjugaison
                         </button>
-                        
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li>
+                                <button type="button" class="btn btn-primary dropdown-item" onclick="clique('conjugaison','CP/CE1',0,0)">
+                                    CP/CE1
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="btn btn-primary dropdown-item" onclick="clique('conjugaison','CE2/CM1',1,0)">
+                                    CE2/CM1
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="btn btn-primary dropdown-item"
+                                    onclick="clique('conjugaison','CM2 / 6ème',3,0)"> CM2/6ème </button>
+                            </li>
+                    
+                        </ul>
                     </div>
-            
-                    <div class="bouton dropdown multiplicationPosee">
-                        <button class="btn btn-danger dropdown-toggle disabled" type="button" id="dropdownMenuButton1"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="bouton dropdown orthographe">
+                        <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             Orthographe
                         </button>
-                        
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li>
+                                <button type="button" class="btn btn-primary dropdown-item" 
+                                onclick="clique('conjugaison','CP/CE1',0,0)"> CP/CE1 </button>
+                            </li>
+                            <li>
+                                <button type="button" class="btn btn-primary dropdown-item" 
+                                onclick="clique('conjugaison','CE2/CM1',1,0)"> CE2/CM1 </button>
+                            </li>
+                            <li>
+                                <button type="button" class="btn btn-primary dropdown-item"
+                                    onclick="clique('orthographe','CM2/6ème',3,0)"> CM2/6ème </button>
+                            </li>
+                    
+                        </ul>
                     </div>
-            
             
                 </div>
             </nav>

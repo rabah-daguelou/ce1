@@ -67,3 +67,8 @@
     width: 200px;
     height: 40px;
 }
+
+.btnPoemeClasse {
+    max-width: 300px;
+    margin: 10px auto;
+}

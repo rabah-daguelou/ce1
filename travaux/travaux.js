@@ -289,6 +289,18 @@ let poesieTableau = [
       strophe4: "Rayan4.mp3",
     },
   },
+  {
+    prenom: "Mohamed",
+    pdf: "mohamed.pdf",
+    png: "mohamed.png",
+    audio: "mohamed.mp3",
+    strophes: {
+      strophe1: "Mohamed1.mp3",
+      strophe2: "Mohamed2.mp3",
+      strophe3: "Mohamed3.mp3",
+      strophe4: "Mohamed4.mp3",
+    },
+  },
 ];
 
  // Fonction Générer un nombre aléatoire dans un interval
@@ -354,15 +366,25 @@ function poesieFunction() {
 
     prenomPoeme.textContent = eleve.prenom;
     imagePoeme.innerHTML = `<a href="poesie/poemesPdf/${eleve.pdf}" target="_blank"><img src="poesie/poemesPng/${eleve.png}"  alt="Poésie de ${eleve.prenom}"></a>`;
-    divAudio.innerHTML = `<audio controls src="poesie/audios/${eleve.audio}" ></audio>`;
+    divAudio.innerHTML = `<audio controls src="poesie/audios/${eleve.audio}" ></audio> <br>`;
   });
+  // Ecouter le bouton Poeme de la classe
+  let btnPoemeClasse = document.createElement("p");
+  btnPoemeClasse.textContent = 'Le poème de la classe'
+  btnPoemeClasse.className = 'btnPoemeClasse'
+  tableau.appendChild(btnPoemeClasse)
+  let audioPoemeClasse = document.createElement('p')
+  tableau.appendChild(audioPoemeClasse)
+  audioPoemeClasse.innerHTML =
+    '<audio controls src="poesie/audios/poeme_classe.mp3" ></audio> <br>';
+  tableau.appendChild(audioPoemeClasse)
 
   // Générer un poème de la classe
   let btnPoemeAleatoire = document.createElement("button");
   btnPoemeAleatoire.className = "btn btn-success";
   tableau.appendChild(btnPoemeAleatoire);
   btnPoemeAleatoire.textContent = "Composer mon poème";
-  
+
   let poemeChoisi = [];
   let obj = {};
 
@@ -372,11 +394,11 @@ function poesieFunction() {
       src: [`poesie/audios/${poemeChoisi[i]}`],
       preload: true,
       onend: function () {
-        if (i+1<poemeChoisi.length) {
+        if (i + 1 < poemeChoisi.length) {
           autoplay(i + 1, poemeChoisi);
         } else {
-          btnPoemeAleatoire.disabled = false
-          btnPoemeAleatoire.textContent="Générer mon poème"
+          btnPoemeAleatoire.disabled = false;
+          btnPoemeAleatoire.textContent = "Générer mon poème";
         }
       },
     });
@@ -386,10 +408,10 @@ function poesieFunction() {
 
   // Ecouter le bouton composer mon poème
   btnPoemeAleatoire.addEventListener("click", () => {
-    poemeChoisi=[]
+    poemeChoisi = [];
     btnPoemeAleatoire.disabled = true;
     //let divPoemeClasse = document.createElement("div");
-   // tableau.appendChild(divPoemeClasse);
+    // tableau.appendChild(divPoemeClasse);
     for (let i = 0; i < poesieTableau.length; i++) {
       let numeroEleve = aleatoire(0, poesieTableau.length);
       let numeroStrophe = aleatoire(1, 4);
@@ -398,10 +420,8 @@ function poesieFunction() {
       poemeChoisi.push(stropheChoisie);
     }
 
-    // howler js  
-autoplay(0, poemeChoisi);
-  
+    // howler js
+    autoplay(0, poemeChoisi);
   });
-  
 }
 
