@@ -294,7 +294,7 @@ function tablesDeMultiplicationFunction(choix, niveau, note, question) {
         divBoutonsTables.appendChild(monBoutonTable);
         monBoutonTable.addEventListener('click', () => {
           table = tables[t]
-          tableFunction(table, note, question)
+          tableFunction(niveau, table, note, question)
         }) 
       }
       break;
@@ -306,7 +306,7 @@ function tablesDeMultiplicationFunction(choix, niveau, note, question) {
         divBoutonsTables.appendChild(monBoutonTable);
         monBoutonTable.addEventListener('click', () => {
           table = tables[t]
-          tableFunction(table, note, question)
+          tableFunction(niveau, table, note, question)
         })
       }
       break;
@@ -318,7 +318,7 @@ function tablesDeMultiplicationFunction(choix, niveau, note, question) {
         divBoutonsTables.appendChild(monBoutonTable);
         monBoutonTable.addEventListener('click', () => {
           table = tables[t]
-          tableFunction(table, note, question)
+          tableFunction(niveau, table, note, question)
         })
       }
       break;
@@ -329,7 +329,7 @@ function tablesDeMultiplicationFunction(choix, niveau, note, question) {
   
 }
 // Fonction tables multiplication
-function tableFunction(x, note, question) {
+function tableFunction(niveau, x, note, question) {
   tableau.innerHTML = ''
   // Créer h2 Titre
   let titreAndScore = document.createElement("div");
@@ -339,7 +339,7 @@ function tableFunction(x, note, question) {
   let titre1 = document.createElement("h4");
   titre1.textContent = 'Table de: ' + x;
   let titre2 = document.createElement("h4");
-  titre2.textContent = "Niveau: CP / CE1 ";
+  titre2.textContent = "Niveau: " + niveau;
   // Créer p Score
   let score = document.createElement("h5");
   
@@ -518,117 +518,3 @@ function calculFunction(choix, niveau, note, question) {
     });
   });
 };
-
-  
-/*
-// 1. Fonction Calcul mental
-function calcul_mental_function(choix, niveau, note, question) {
- 
-  tableau.innerHTML = "";
-  let numero_operation = Math.floor(Math.random() * 3);
-
-  niveauFunction(niveau);
-  operationFunction(numero_operation, niveau);
-
-  // fonction calcul mental
-  // Créer Div titre et score
-  let titreAndScore = document.createElement("div");
-  titreAndScore.className = "titreAndScore";
-
-  // Créer h2 Titre
-  let titre = document.createElement("h4");
-  titre.textContent = choix + niveau;
-
-  // Créer p Score
-  let score = document.createElement("p");
-  score.textContent = `Note : ${note} / ${question} `;
-
-  // Insérer le titre et score
-  tableau.appendChild(titreAndScore);
-  titreAndScore.appendChild(titre);
-  titreAndScore.appendChild(score);
-
-  // Créer l'opération
-  let texteOperation = document.createElement("p");
-  texteOperation.className = "operation";
-  texteOperation.textContent = operation;
-  tableau.appendChild(texteOperation);
-
-  // Créer input réponse
-  let inputReponse = document.createElement("input");
-  inputReponse.className = "btn btn-light";
-  inputReponse.setAttribute("placeholder", "Ta réponse ici");
-  tableau.appendChild(inputReponse);
-
-  // Apparaitre le bouton Valider
-  let bouton_valider = document.createElement("button");
-  bouton_valider.textContent = "Valider";
-  bouton_valider.className = "btn btn-danger bouton_valider";
-
-  // Ecouter input insérer bouton_valider
-  inputReponse.addEventListener("input", () =>
-    tableau.appendChild(bouton_valider)
-  );
-
-  // Ecouter bouton_valider - Insérer le bouton Suivant
-  bouton_valider.addEventListener("click", () => {
-    bouton_valider.remove();
-    inputReponse.toggleAttribute("disabled");
-    // Créer insérer bouton Suivant
-    let bouton_suivant = document.createElement("button");
-    bouton_suivant.textContent = "Suivant";
-    bouton_suivant.className = "btn btn-success bouton_suivant";
-
-    tableau.appendChild(messageReponse);
-    tableau.appendChild(bouton_suivant);
-    question++;
-
-    // Tester la réponse
-    if (inputReponse.value == resultat) {
-      note++;
-      score.textContent = `Note : ${note} / ${question} `;
-      messageReponse.style.color = "green";
-      messageReponse.textContent = bonneRéponse;
-    } else {
-      messageReponse.style.color = "red";
-      messageReponse.textContent = mauvaiseRéponse;
-    }
-
-    // Ecouter le bouton suivant
-    bouton_suivant.addEventListener("click", () => {
-      tableau.innerHTML = "";
-      if (question < 10) {
-        calcul_mental_function(niveau, note, question);
-      } else {
-        let noteFinale = document.createElement("p");
-        tableau.appendChild(noteFinale);
-        noteFinale.className = "noteFinale";
-        noteFinale.textContent = `Ta note est:  ${note} / 10 `;
-
-        let commentaire = document.createElement("p");
-        tableau.appendChild(commentaire);
-        commentaire.className = "commentaire";
-
-        let emoji = document.createElement("p");
-        tableau.appendChild(emoji);
-        emoji.className = "emoji";
-
-        if (note < 5) {
-          commentaire.textContent =
-            "Résultats insufisants! Tu dois t'entrainer davantage.";
-          emoji.innerHTML = "&#128532;";
-        } else if (note < 9) {
-          commentaire.textContent =
-            "Résultats satisfaisants! Tu peux mieux faire.";
-          emoji.innerHTML = "&#128512;";
-        } else {
-          commentaire.textContent =
-            "Excellents résultats! Tu peux essayer le niveau supérieur.";
-          emoji.innerHTML = "&#128585;";
-        }
-      }
-    });
-  });
-}
-*/
-// 2. Fonction Addition posée

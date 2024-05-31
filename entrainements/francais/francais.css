@@ -25,3 +25,32 @@ ul li {
 .divTitre span {
     color: rgb(0, 255, 149);
 }
+
+/* Boutons choix conjugaison niveau1 */
+.divBoutons {
+    background-color: azure;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+#tableau form {
+    background-color: rgb(65, 59, 59);
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    padding: 20px;
+}
+#tableau form div {
+    max-width: 100%;
+    display: flex;    
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding:0 10%;
+}
+.valider {
+    margin: 5px auto;
+}
