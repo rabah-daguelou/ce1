@@ -222,3 +222,17 @@ font-weight:900;
   color: #fff;
   padding: 10px;
 }
+
+/* Popup */
+.popup {
+  width:90%;
+  background-color: #040800;
+  color: rgb(255, 13, 0);
+  border-radius: 10px;
+  padding: 10px;
+  position: fixed;
+  top: 30%;
+  margin: 0 5%;
+  
+
+}
