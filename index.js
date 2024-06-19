@@ -7,11 +7,3 @@ btnHumberger.addEventListener("click", () => {
   navbarNav.classList.toggle("menuBackground");
 });
 
-// Popup
-
-let popup = document.getElementById('popup')
-let popupBtn = document.getElementById("popupBtn");
-
-popupBtn.addEventListener('click', () => {
-  popup.style.display='none'
-})

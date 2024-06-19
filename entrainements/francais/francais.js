@@ -8,10 +8,8 @@ let tableauVerbes = [
   ["suis", "es", "est", "est", "est", "sommes", "êtes", "sont", "sont"],
   ["ai", "as", "a", "a", "a", "avons", "avez", "ont", "ont"],
     ["e", "es", "e", "e", "e", "ons", "ez", "ent", "ent"],
-   // ["préparer", "fêter", "arrêter", "passer", "rester", "ajouter", "porter", "ennuyer", "parler", "danser", "rentrer", "inviter", "jouer", "sembler", "détester", "promener", "aider", "marcher", "montrer", "coucher", "chanter", "rencontrer", "attraper", "prêter", "penser", "rouler", "glisser", "pousser", "gagner", "laisser", "répéter", "tomber", "aimer", "voler", "appuyer", "avancer", "voyager", "essayer", "garder", "bouger", "regarder", "étudier", "placer", "élever", "chercher", "accepter", "exister", "décider", "commencer", "fermer", "ressembler", "entrer", "quitter","acheter","rêver", "tourner", "appeler", "envoyer", "présenter", "frapper", "demander", "continuer", "écouter", "retrouver", "trouver", "nager", "retourner", "emmener", "payer", "compter", "lever", "refuser", "habiter", "occuper", "préférer", "tromper", "crier", "amener", "deviner", "travailler", "téléphoner", "couper", "monter", "sauver", "pleurer", "apporter", "essuyer", "nommer", "jeter", "expliquer", "raconter", "espérer", "donner", "respirer", "manquer", "inquiéter", "manger", "oublier", "coller", "toucher",],
-    ["acheter"]
 ];
-let reponse;
+let verbe;
 //
 
 let titre = document.createElement("h2");
@@ -272,64 +270,54 @@ const formulaireConjugaisonFunction = function (matiere, niveau,numero_question,
     let mesInput = document.getElementsByClassName("inputEtrePresent");
       
       if (numeroVerbe < 3) {
-          reponse = ''
+          verbe = ''
       } else {
-          reponse = verbe.substring(0, verbe.length - 2);
+          verbe = verbe.substring(0, verbe.length - 2);
       }
-        
+      let radical= verbe;
         for (let i = 0; i < tableauVerbes[numeroVerbe].length; i++) {
           mesInput[i].value = mesInput[i].value.toLowerCase();
           
           // Exception verbes en ger
-          if (reponse.charAt(reponse.length - 1) == "g" && i==5 ) {
-            console.log("radical:", reponse);
-            reponse = reponse + "e"
-            console.log("radical:", reponse);
-          };
-          if (reponse.charAt(reponse.length - 1) == "e" && i==6) {
-            reponse = reponse.substring(0, reponse.length - 1);
-            console.log("radical:", reponse);
-          }
-           
-          
-          // Exception verbes en cer
-          if (reponse.charAt(reponse.length - 1) == "c" && i == 5) {
-            reponse = reponse.substring(0, reponse.length - 1) + "ç";
-          }
-          // Exception verbes en yer
-            if (reponse.charAt(reponse.length - 1) == "y") {
-              switch (i) {
-                case 0||1||2||3||4||7||8:
-                    reponse.charAt(reponse.length - 1) == "i"
-                    break;
-                  default:
-                      reponse.charAt(reponse.length - 1) == "y"
-                    break;
-              }
+          if (verbe.charAt(verbe.length - 1) == "g") {
+            if (i== 5) {radical = verbe + "e"} else {radical = verbe}
           } 
+                  
+          // Exception verbes en cer
+          if (verbe.charAt(verbe.length - 1) == "c") {
+            if (i == 5) {radical = verbe.substring(0, verbe.length - 1) + 'ç'} else {radical = verbe}
+          }
+          
+          // Exception verbes en yer
+          if (verbe.charAt(verbe.length - 1) == "y") {
+            if (i < 5 || i>6) { radical = verbe.substring(0, verbe.length - 1) + "i" }
+            else { radical=verbe}
+          }
+          
+          /*
           // Exception jeter / appeler
 
-          if (reponse == "jet") {
-            reponse = "jett";
+          if (verbe == "jet") {
+            verbe = "jett";
           }
-          if (reponse == "appel") {
-            reponse = "appell";
+          if (verbe == "appel") {
+            verbe = "appell";
           }
 
           // Exception en eter
-          if (reponse.substring(reponse.length - 2) == "et") {
+          if (verbe.substring(verbe.length - 2) == "et") {
             if (i < 5 || i > 6) {
-              reponse = reponse.substring(0, reponse.length - 2) + "èt";
+              verbe = verbe.substring(0, verbe.length - 2) + "èt";
             }
           }
-          if (reponse.substring(reponse.length - 2) == "èt") {
+          if (verbe.substring(verbe.length - 2) == "èt") {
             if (i == 5 || i == 6) {
-              reponse = reponse.substring(0, reponse.length - 2) + "et";
+              verbe = verbe.substring(0, verbe.length - 2) + "et";
             }
           }
-          
+        */  
           // Tester les réponses
-          if (mesInput[i].value == reponse + tableauVerbes[numeroVerbe][i]) {
+          if (mesInput[i].value == radical + tableauVerbes[numeroVerbe][i]) {
             mesInput[i].style.background = "green";
             note++;
             numero_question++;
@@ -371,7 +359,10 @@ const orthographe3 = function(matiere, niveau, numero_question, note) {
 }
 // Fin orthographe
 
-let verbesGroupe1 = [ "préparer", "passer", "rester", "ajouter", "porter", "parler", "danser", "rentrer", "inviter", "jouer", "sembler", "détester", "aider", "marcher", "montrer", "coucher","chanter", "rencontrer", "attraper", "penser", "rouler", "glisser", "pousser","gagner", "laisser", "tomber","aimer", "voler", "garder", "regarder", "étudier", "chercher", "accepter", "exister", "décider", "partager", "fermer", "ressembler", "entrer","quitter", "tourner", "présenter", "frapper","demander", "continuer", "écouter", "retrouver","changer", "trouver", "retourner", "emmener","compter", "refuser", "partager", "habiter", "occuper", "tromper","crier", "amener", "deviner", "travailler","téléphoner", "couper", "monter", "propager", "sauver","pleurer", "apporter", "nommer", "nager","expliquer", "raconter", "donner", "respirer", "manquer", "oublier", "toucher", "manger"]
+let verbesGroupe1 = ['payer']
+  
+//  ["préparer", "passer", "rester", "ajouter", "porter", "parler", "danser", "rentrer", "inviter", "jouer", "sembler", "détester", "aider", "marcher", "montrer", "coucher", "chanter", "rencontrer", "attraper", "penser", "rouler", "glisser", "pousser", "gagner", "laisser", "tomber", "aimer", "voler", "garder", "regarder", "étudier", "chercher", "accepter", "exister", "décider", "partager", "fermer", "ressembler", "entrer", "quitter", "tourner", "présenter", "frapper", "demander", "continuer", "écouter", "retrouver", "changer", "trouver", "retourner", "emmener", "compter", "refuser", "partager", "habiter", "occuper", "tromper", "crier", "amener", "deviner", "travailler", "téléphoner", "couper", "monter", "propager", "sauver", "pleurer", "apporter", "nommer", "nager", "expliquer", "raconter", "donner", "respirer", "manquer", "oublier", "toucher", "manger"]
+
 // Fonction radical
 
 let choixVerbe = function () {
