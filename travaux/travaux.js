@@ -315,13 +315,19 @@ function poesieFunction() {
   titreLiberte.textContent = "Liberté ";
   tableau.appendChild(titreLiberte);
   let introduction = document.createElement("p");
-  introduction.innerHTML = `Dans le cadre d'un projet collectif en EMC 
-  (Education Morale et Civique), nous avons étudié les valeurs de
-  la République française. Sur le thème de la Liberté, nous avons choisis
-  d'étudier le poème <span> <a href="https://www.poetica.fr/poeme-279/liberte-paul-eluard/"
-  target='blanck'> Liberté </a> </span> , de Paul Eluard. Les élèves
-  ont pu écrire leur propre poème sur la même trame que l'auteur.
-  J'ai le plaisir de vous partager leurs productions.<br> <br>
+  introduction.innerHTML = ` Dans le cadre d’un projet collectif en EMC
+   (Enseignement moral et civique), nous avons étudié les valeurs
+   de la République française. Autour du thème de la liberté,
+   nous avons choisi d’étudier le poème
+   <span> <a href="https://www.poetica.fr/poeme-279/liberte-paul-eluard/"
+  target='blanck'> Liberté </a> </span> , de Paul Eluard. Les élèves ont
+  ensuite pu écrire leur propre poème en s’inspirant de la structure
+   de l’œuvre de l’auteur. </br>
+
+J’ai le plaisir de vous faire découvrir leurs productions !
+
+
+<br> <br>
   <ul>
   <li class='telecharger'> Cliquez sur la carte de l'élève pour la télécharger. </li>
   <li class='audio'> Cliquez sur le lecteur audio pour écouter le poème de l'élève.</li>

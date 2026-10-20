@@ -1,35 +1,27 @@
-
-let note, numero_question
-// Vocabulaire
-let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-// Conjugaison
-let tableauVerbes = [
-  ["Je", "Tu", "Il", "Elle", "On", "Nous", "Vous", "Ils", "Elles"],
-  ["suis", "es", "est", "est", "est", "sommes", "êtes", "sont", "sont"],
-  ["ai", "as", "a", "a", "a", "avons", "avez", "ont", "ont"],
-    ["e", "es", "e", "e", "e", "ons", "ez", "ent", "ent"],
-];
+// 1- VARIABLES CONJUGAISON
 let verbe;
-//
 
-let titre = document.createElement("h2");
-let divTitre = document.createElement("div");
-divTitre.className = 'divTitre'
-let titre1 = document.createElement("h5");
-let divScore = document.createElement("div");
-let score = document.createElement("span");
+// Liste des verbes du 1er groupe
+let verbesGroupe1 = ["acheter","racheter","bégueter","corseter","crocheter","fileter","fureter","haleter","agneler","celer","déceler","receler","ciseler","démanteler","écarteler","encasteler","geler","dégeler","congeler","surgeler","marteler","modeler","peler","peler","appeler","jeter","acheter","préparer","passer","rester","ajouter","porter","parler","danser","rentrer","inviter","jouer","sembler","détester","aider","marcher","montrer","coucher","chanter","rencontrer","attraper","penser","rouler","glisser","pousser","gagner","laisser","tomber","aimer","voler","garder","regarder","étudier","chercher","accepter","exister","décider","partager","fermer","ressembler","entrer","quitter","tourner","présenter","frapper","demander","continuer","écouter","retrouver","changer","trouver","retourner","emmener","compter","refuser","partager","habiter","occuper","tromper","crier","amener","deviner","travailler","téléphoner","couper","monter","propager","sauver","pleurer","apporter","nommer","nager","expliquer","raconter","donner","respirer","manquer","oublier","toucher","manger",];
+// Liste des verbes exception en eler
+let eler=["agneler","celer","déceler","receler","ciseler","démanteler","écarteler","encasteler","geler","dégeler","congeler","surgeler","marteler","modeler","peler"]
+// Liste des verbes exception en eter
+let eter = ["acheter","racheter","bégueter","corseter","crocheter","fileter","fureter","haleter" ]
 
-
-let consigne = document.createElement('p')
-consigne.textContent = ' Je te pose dix questions. A chaque bonne réponse, tu gagnes un point. Tu peux suivre instantanément ton score en haut à droite de ton écran.'
-
-let boutonCommencer = document.createElement("button");
-boutonCommencer.textContent = 'Commencer'
-boutonCommencer.className = 'btn btn-primary'
-
-// Clique sur une matière
+// 2- VARIABLES VOCABULAIRE
+let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+let lettre
+// Choisir une lettre de l'alphabet
+let choixLettre = function () {
+  let choix = Math.floor(Math.random(0, alphabet.length - 1) * alphabet.length);
+  lettre = alphabet[choix];
+  indexLettre = alphabet.indexOf(lettre)
+  return lettre, indexLettre
+}
+// Fonction Clique sur une matière
 function clique(matiere, niveau, numero_question, note) {
-    divTitre.innerHTML=''
+    console.log("Choix: " + matiere + " " + niveau);
+  divTitre.innerHTML = ''
     tableau.innerHtml = "";
 
     titre.textContent = `S'entrainer en ${matiere}`;
@@ -52,8 +44,10 @@ function clique(matiere, niveau, numero_question, note) {
         titre.textContent = `S'entrainer en ${matiere}`;
         titre1.textContent = `Niveau:${niveau}`;
         score.textContent = `Note: ${note} / ${numero_question}`;
-        switch (matiere) {
-            case "vocabulaire":
+      switch (matiere) {
+            // Vocabulaire
+        case "vocabulaire":
+          
                 switch (niveau) {
                   case "CP/CE1":
                     vocabulaire1(matiere, niveau, note, numero_question);
@@ -68,7 +62,8 @@ function clique(matiere, niveau, numero_question, note) {
                     break;
                 }
                 break;
-            case "grammaire":
+            // Grammaire
+          case "grammaire":
                 switch (niveau) {
                   case "CP/CE1":
                     grammaire1(matiere, niveau, note, numero_question);
@@ -83,7 +78,6 @@ function clique(matiere, niveau, numero_question, note) {
                     break;
                 }
                 break;
-            
             // Conjugaison
             case "conjugaison":
                 switch (niveau) {
@@ -121,12 +115,50 @@ function clique(matiere, niveau, numero_question, note) {
         }
     })
 }
+// Conjugaison
+
+// Fonction Choisir un verbe
+
+let choixVerbe = function () {
+  let choix = Math.floor( Math.random(0, verbesGroupe1.length - 1) * verbesGroupe1.length);
+  verbe = verbesGroupe1[choix];
+  return verbe;
+};
+
+let tableauVerbes = [
+  ["Je", "Tu", "Il", "Elle", "On", "Nous", "Vous", "Ils", "Elles"],
+  ["suis", "es", "est", "est", "est", "sommes", "êtes", "sont", "sont"],
+  ["ai", "as", "a", "a", "a", "avons", "avez", "ont", "ont"],
+  ["e", "es", "e", "e", "e", "ons", "ez", "ent", "ent"],
+  ["is", "is", "it", "it", "it", "it", "issons", "issez", "issent", "issent"]
+];
+let pronoms = ["Je", "Tu", "Il", "Elle", "On", "Nous", "Vous", "Ils", "Elles"];
+
+//
+
+let titre = document.createElement("h2");
+let divTitre = document.createElement("div");
+divTitre.className = 'divTitre'
+let titre1 = document.createElement("h5");
+let divScore = document.createElement("div");
+let score = document.createElement("span");
+
+
+let consigne = document.createElement('p')
+consigne.textContent = ' Je te pose dix questions. A chaque bonne réponse, tu gagnes un point. Tu peux suivre instantanément ton score en haut à droite de ton écran.'
+
+let boutonCommencer = document.createElement("button");
+boutonCommencer.textContent = 'Commencer'
+boutonCommencer.className = 'btn btn-primary'
+
+
 
 // Fonctions vocabulaire()
 // 1- CP/CE1
 const vocabulaire1= function(matiere, niveau, numero_question, note) {
-    console.log(matiere, niveau);
-
+  choixLettre()
+  console.log("Quelle lettre suit: ", lettre + '?');
+  console.log("Lettre choisie:", lettre, indexLettre);
 }
 // 2- CE2/CM1
 const vocabulaire2 = function(matiere, niveau, numero_question, note) {
@@ -136,6 +168,7 @@ const vocabulaire2 = function(matiere, niveau, numero_question, note) {
 const vocabulaire3 = function(matiere, niveau, numero_question, note) {
   console.log(matiere, niveau);
 }
+
 // Fin vocabulaire
 
 // Fonctions grammaire()
@@ -152,10 +185,10 @@ const grammaire2 = function(matiere, niveau, numero_question, note) {
 const grammaire3 = function(matiere, niveau, numero_question, note) {
   console.log(matiere, niveau);
 }
-// Fin vocabulaire
+// Fin grammaire
 
-/// Fonctions conjugaison() ///
-    let formulaire = document.createElement("form");
+/// Fonctions conjugaison() //
+let formulaire = document.createElement("form");
 // 1- CP/CE1
 const conjugaison1 = function(matiere, niveau, numero_question, note, verbe) {
     let divBoutons = document.createElement("div");
@@ -229,7 +262,7 @@ const formulaireConjugaisonFunction = function (matiere, niveau,numero_question,
     consigne.textContent=`Je conjugue le verbe ${verbe} au présent.`
     formulaire.appendChild(consigne)
     
-  for (let i = 0; i < tableauVerbes[0].length; i++) {
+  for (let i = 0; i < pronoms.length; i++) {
     let divQuestion = document.createElement("div");
     let labelPronom = document.createElement("label");
     let inputEtrePresent = document.createElement("input");
@@ -277,45 +310,71 @@ const formulaireConjugaisonFunction = function (matiere, niveau,numero_question,
       let radical= verbe;
         for (let i = 0; i < tableauVerbes[numeroVerbe].length; i++) {
           mesInput[i].value = mesInput[i].value.toLowerCase();
-          
+
           // Exception verbes en ger
           if (verbe.charAt(verbe.length - 1) == "g") {
-            if (i== 5) {radical = verbe + "e"} else {radical = verbe}
-          } 
-                  
+            if (i == 5) {
+              radical = verbe + "e";
+            } else {
+              radical = verbe;
+            }
+          }
+
           // Exception verbes en cer
           if (verbe.charAt(verbe.length - 1) == "c") {
-            if (i == 5) {radical = verbe.substring(0, verbe.length - 1) + 'ç'} else {radical = verbe}
+            if (i == 5) {
+              radical = verbe.substring(0, verbe.length - 1) + "ç";
+            } else {
+              radical = verbe;
+            }
           }
-          
+
           // Exception verbes en yer
           if (verbe.charAt(verbe.length - 1) == "y") {
-            if (i < 5 || i>6) { radical = verbe.substring(0, verbe.length - 1) + "i" }
-            else { radical=verbe}
-          }
-          
-          /*
-          // Exception jeter / appeler
-
-          if (verbe == "jet") {
-            verbe = "jett";
-          }
-          if (verbe == "appel") {
-            verbe = "appell";
-          }
-
-          // Exception en eter
-          if (verbe.substring(verbe.length - 2) == "et") {
             if (i < 5 || i > 6) {
-              verbe = verbe.substring(0, verbe.length - 2) + "èt";
+              radical = verbe.substring(0, verbe.length - 1) + "i";
+            } else {
+              radical = verbe;
             }
           }
-          if (verbe.substring(verbe.length - 2) == "èt") {
-            if (i == 5 || i == 6) {
-              verbe = verbe.substring(0, verbe.length - 2) + "et";
+          // Exception eler
+          if (verbe.substring(verbe.length, verbe.length - 2) == "el") {
+            if (i < 5 || i > 6) {
+              radical = verbe + "l";
+            } else {
+              radical = verbe;
             }
           }
-        */  
+          // Sauf
+          if (eler.includes(verbe + "er")) {
+            if (i < 5 || i > 6) {
+              radical = verbe.substring(0, verbe.length - 2) + "èl";
+            } else {
+              radical = verbe;
+            }
+          }
+          // Exception eter
+          if (verbe.substring(verbe.length, verbe.length - 2) == "et") {
+            if (i < 5 || i > 6) {
+              radical = verbe + "t";
+            } else {
+              radical = verbe;
+            }
+          }
+          // Sauf
+          if (eter.includes(verbe + "er")) {
+            if (i < 5 || i > 6) {
+              radical = verbe.substring(0, verbe.length - 2) + "èt";
+            } else {
+              radical = verbe;
+            }
+          }
+          // Les verbes en érer, éter, éder, éger, éler,...
+          if (verbe.charAt(verbe.length - 4) == 'é') {
+            console.log('é');
+          }
+// fin des exceptions4
+
           // Tester les réponses
           if (mesInput[i].value == radical + tableauVerbes[numeroVerbe][i]) {
             mesInput[i].style.background = "green";
@@ -347,7 +406,7 @@ const conjugaison3 = function(matiere, niveau, numero_question, note) {
 // Fonction orthographe()
 // 1- CP/CE1
 const orthographe1 = function(matiere, niveau, numero_question, note) {
-    console.log(matiere, niveau);
+    
 }
 // 2- CE2/CM1
 const orthographe2 = function(matiere, niveau, numero_question, note) {
@@ -359,17 +418,7 @@ const orthographe3 = function(matiere, niveau, numero_question, note) {
 }
 // Fin orthographe
 
-let verbesGroupe1 = ['payer']
-  
-//  ["préparer", "passer", "rester", "ajouter", "porter", "parler", "danser", "rentrer", "inviter", "jouer", "sembler", "détester", "aider", "marcher", "montrer", "coucher", "chanter", "rencontrer", "attraper", "penser", "rouler", "glisser", "pousser", "gagner", "laisser", "tomber", "aimer", "voler", "garder", "regarder", "étudier", "chercher", "accepter", "exister", "décider", "partager", "fermer", "ressembler", "entrer", "quitter", "tourner", "présenter", "frapper", "demander", "continuer", "écouter", "retrouver", "changer", "trouver", "retourner", "emmener", "compter", "refuser", "partager", "habiter", "occuper", "tromper", "crier", "amener", "deviner", "travailler", "téléphoner", "couper", "monter", "propager", "sauver", "pleurer", "apporter", "nommer", "nager", "expliquer", "raconter", "donner", "respirer", "manquer", "oublier", "toucher", "manger"]
 
-// Fonction radical
-
-let choixVerbe = function () {
-    let choix = Math.floor(Math.random(0, verbesGroupe1.length-1) * verbesGroupe1.length)
-    verbe = verbesGroupe1[choix]
-    return verbe
-}
  
 
 
